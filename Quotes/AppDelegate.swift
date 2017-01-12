@@ -6,6 +6,20 @@
 //  Copyright © 2017 Sahil Gangele. All rights reserved.
 //
 
+/*
+ Great explanation on stack overflow for the purpose of cocoapods: 
+ "CocoaPods is the dependency manager for Objective-C projects. It has thousands of libraries and can help you scale your projects elegantly." via http://cocoapods.org
+ 
+ Essentially, it helps you incorporate 3rd party libraries, frameworks, into your product without worrying about how to set them up and configure your project, which at times could be a huge pain.
+ 
+ Regarding why can't you just include files in your project?
+ 
+ Since these are 3rd party so you will have to download and copy them to your project every time there is a new version? Lets say, you have 10 libs or frameworks in your project, now imagine the time it will take you to check if anyone of them has any new version that you want to update? and Worst if something does not work, you need to revert back to previous version? It does take time and is a nuisance, with CocoaPods you simply type pod update and updates the ones that have newer versions available.
+ Now If you want v1.1 of one particular library? How easy would it be for you to skim through Git commit history to find out which one you need? With CocoaPods, you simply say pod 'AFrameworkLib', '1.1'
+ Every lib requires setting up your project with a certain set of configuration to make them work, doing it for 10 or so libraries and then fixing conflicts is pain in itself. With CocoaPods, its taken care of automatically.
+ Last but not least, you have to include licenses for all 3rd party libraries you are using to provide credit to original developer of that library. Imagine copying 10 license docs and making sure they are up to date? CocoaPod automatically creates an acknowledgement file in your project that you can simply include somewhere appropriate.
+ */
+
 import UIKit
 import CoreData
 

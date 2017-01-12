@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-Q1-RoT">
+                                <rect key="frame" x="164" y="554" width="46" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="quoteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i27-us-V4m"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-LA-ycf" userLabel="QuoteLabel">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-1c-XCH" userLabel="AuthorLabel">
+                                <rect key="frame" x="16" y="344" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5YD-1c-XCH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4mH-jj-WOB"/>
+                            <constraint firstItem="yVY-Q1-RoT" firstAttribute="top" relation="lessThanOrEqual" secondItem="5YD-1c-XCH" secondAttribute="bottom" constant="189" id="89z-as-7kq"/>
+                            <constraint firstItem="WoG-LA-ycf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8je-Yv-ovW"/>
+                            <constraint firstItem="WoG-LA-ycf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Acz-eu-PQd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yVY-Q1-RoT" secondAttribute="bottom" constant="75" id="AfA-kh-BzS"/>
+                            <constraint firstItem="WoG-LA-ycf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Df8-j5-BqX"/>
+                            <constraint firstItem="5YD-1c-XCH" firstAttribute="top" secondItem="WoG-LA-ycf" secondAttribute="bottom" id="FoS-Q0-HFp"/>
+                            <constraint firstItem="WoG-LA-ycf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PlY-Dh-PyF"/>
+                            <constraint firstItem="5YD-1c-XCH" firstAttribute="width" secondItem="WoG-LA-ycf" secondAttribute="width" id="tRG-TM-ARv"/>
+                            <constraint firstItem="yVY-Q1-RoT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wXG-bg-WgZ"/>
+                            <constraint firstItem="yVY-Q1-RoT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5YD-1c-XCH" secondAttribute="bottom" constant="5" id="ybQ-8d-Lv3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="5YD-1c-XCH" id="y8G-wi-YGQ"/>
+                        <outlet property="generateQuoteButton" destination="yVY-Q1-RoT" id="Bo0-iS-uep"/>
+                        <outlet property="quoteLabel" destination="WoG-LA-ycf" id="hJe-b1-7RU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
