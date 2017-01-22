@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuoteGeneratorViewController" customModule="Quotes" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="Qr4-9A-Yo3" id="o2o-h1-5hM"/>
+                <outlet property="generateQuoteButton" destination="SGN-vh-ing" id="Fk5-LO-10u"/>
+                <outlet property="quoteLabel" destination="iT3-Yz-dHA" id="aFN-Ai-wMT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT3-Yz-dHA" userLabel="QuoteLabel">
+                    <rect key="frame" x="8" y="323" width="359" height="21"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="7ZN-9i-kfU" appends="YES" id="Npd-vm-e2B"/>
+                    </connections>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr4-9A-Yo3" userLabel="AuthorLabel">
+                    <rect key="frame" x="8" y="344" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGN-vh-ing">
+                    <rect key="frame" x="164" y="617" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="generateQuotePressed:" destination="-1" eventType="touchUpInside" id="vUs-NP-DG7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SGN-vh-ing" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0zq-Bl-a6A"/>
+                <constraint firstItem="Qr4-9A-Yo3" firstAttribute="top" secondItem="iT3-Yz-dHA" secondAttribute="bottom" id="1pW-Ds-MuG"/>
+                <constraint firstItem="iT3-Yz-dHA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1q1-Z1-QvK"/>
+                <constraint firstItem="Qr4-9A-Yo3" firstAttribute="width" secondItem="iT3-Yz-dHA" secondAttribute="width" id="3Mo-FF-UQ7"/>
+                <constraint firstItem="iT3-Yz-dHA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DY3-A6-e8p"/>
+                <constraint firstItem="iT3-Yz-dHA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GQZ-v2-vWa"/>
+                <constraint firstAttribute="bottom" secondItem="SGN-vh-ing" secondAttribute="bottom" constant="20" id="TE6-He-Ufs"/>
+                <constraint firstItem="SGN-vh-ing" firstAttribute="top" relation="lessThanOrEqual" secondItem="Qr4-9A-Yo3" secondAttribute="bottom" constant="252" id="X2Y-MY-BPA"/>
+                <constraint firstAttribute="trailing" secondItem="iT3-Yz-dHA" secondAttribute="trailing" constant="8" id="X95-oj-PbU"/>
+                <constraint firstItem="Qr4-9A-Yo3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eDy-ZR-HpF"/>
+                <constraint firstItem="SGN-vh-ing" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qr4-9A-Yo3" secondAttribute="bottom" constant="5" id="weT-VF-Fem"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="7ZN-9i-kfU">
+            <connections>
+                <action selector="longPressSaveQuote:" destination="-1" id="vZz-fd-hBy"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YOk-dX-bQA">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Button"/>
+        </button>
+    </objects>
+</document>

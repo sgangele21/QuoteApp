@@ -7,38 +7,45 @@
 //
 
 import UIKit
+import Firebase
+
+// TODO: Put this in a struct along with other database values
+let kDataBaseReference = "Quotes"
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var generateQuoteButton: UIButton!
-    @IBOutlet weak var quoteLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    var quoteClient = QuoteClient()
+    
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-
-    // The underscore means when calling this method, you 
-    // Don't need to specify the parameter
-    @IBAction func quoteButtonPressed(_ sender: Any) {
-        self.quoteClient.fetchQuote(numberOfQuotes: 1) { quotes in
-            let quote = quotes[0]
-            self.updateLabels(quoteString: quote.getQuote(), authorString: quote.getAuthor())
-            
-        }
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BackGroundColor")!)
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let quoteGeneratorView = mainStoryBoard.instantiateViewController(withIdentifier: "QuoteGenerator") as! QuoteGeneratorViewController
+        let savedQuotesView = mainStoryBoard.instantiateViewController(withIdentifier: "SavedQuotes") as! SavedQuotesViewController
+        self.setupView(viewControllers: [quoteGeneratorView,savedQuotesView])
     }
     
-    private func updateLabels(quoteString : String?, authorString: String?) {
-        if let quote = quoteString {
-            self.quoteLabel.text = quote
+    private func setupView(viewControllers : [UIViewController]) {
+        for vc in viewControllers {
+            // This is needed to create a parent - child
+            // relationship between the views
+            self.addChildViewController(vc)
+            self.backgroundScrollView.addSubview(vc.view)
+            // For implementing my own container view, so view needs to be aware of this
+            vc.didMove(toParentViewController: self)
+            if let savedQuotesView = vc as? SavedQuotesViewController {
+                var savedQuotesFrame: CGRect = savedQuotesView.view.frame
+                savedQuotesFrame.origin.x = self.view.frame.width
+                savedQuotesView.view.frame = savedQuotesFrame
+            }
         }
-        if let author = authorString {
-            self.authorLabel.text = author
-        }
+        let numberOfViews = CGFloat(viewControllers.count)
+        self.backgroundScrollView.contentSize = CGSize(width: self.view.frame.width * numberOfViews, height: self.view.frame.height)
     }
-    
     
 }
 

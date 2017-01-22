@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingView" customModule="Quotes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hZf-tf-0EI">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-rw-fp9">
+                    <rect key="frame" x="151" y="351" width="73" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hZf-tf-0EI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QNC-V0-WEn"/>
+                <constraint firstItem="hZf-tf-0EI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UQN-wa-lFi"/>
+                <constraint firstItem="qJx-rw-fp9" firstAttribute="top" secondItem="hZf-tf-0EI" secondAttribute="bottom" constant="8" id="cDh-mm-JlD"/>
+                <constraint firstItem="qJx-rw-fp9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sLc-iY-Jf8"/>
+            </constraints>
+            <connections>
+                <outlet property="loadingIndicator" destination="hZf-tf-0EI" id="OEf-VU-P74"/>
+                <outlet property="loadingLabel" destination="qJx-rw-fp9" id="4o7-kF-k6l"/>
+            </connections>
+            <point key="canvasLocation" x="94" y="152"/>
+        </view>
+    </objects>
+</document>
