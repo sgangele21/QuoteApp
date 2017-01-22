@@ -4,4 +4,6 @@ use_frameworks!
 
 target ‘Quotes’ do
     pod 'Alamofire', '~> 4.0'
+    pod 'Firebase'
+    pod ‘Firebase/Database’
 end
