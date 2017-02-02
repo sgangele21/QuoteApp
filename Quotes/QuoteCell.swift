@@ -17,6 +17,10 @@ public class QuoteCell: UITableViewCell {
     var quote: Quote!
     var viewController: UIViewController!
     
+    override public func didMoveToSuperview() {
+        self.layoutIfNeeded()
+    }
+    
     public func setupCell(quoteText: String, authorText: String, quote: Quote, viewController: UIViewController) {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10.0
