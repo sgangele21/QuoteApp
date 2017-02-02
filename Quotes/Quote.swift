@@ -15,7 +15,7 @@ public struct Quote {
     private let quote: String
     private let id: Int
     private let link: URL
-    private var like = false
+    public var like = false
     private var ref : FIRDatabaseReference?
     
     init?(JSON: [String: AnyObject]) {
@@ -50,7 +50,7 @@ public struct Quote {
         var fullQuote = "\(self.getQuote())"
         switch quoteStyle {
         case .QuoteHyphen:
-            fullQuote += "\n-\(self.getAuthor())"
+            fullQuote += "\n-\n\(self.getAuthor())"
         case .QuoteBy:
             fullQuote += "\n-By \(self.getAuthor())"
         case .QuoteComma:

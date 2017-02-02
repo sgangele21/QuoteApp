@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47232C04ADD83C22772E3B26 /* Pods_Quotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94E2BDF7A944B8027CA4E4D /* Pods_Quotes.framework */; };
+		763FC3691E37A29100DC1D22 /* SingleQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763FC3681E37A29100DC1D22 /* SingleQuoteViewController.swift */; };
 		766D226A1E28A319002CA56D /* QuoteGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D22681E28A319002CA56D /* QuoteGeneratorViewController.swift */; };
 		766D226E1E28A8B5002CA56D /* SavedQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D226C1E28A8B5002CA56D /* SavedQuotesViewController.swift */; };
 		766D22711E29682A002CA56D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D22701E29682A002CA56D /* Quote.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		04229A77B43AB6D5B3318943 /* Pods-Quotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quotes/Pods-Quotes.debug.xcconfig"; sourceTree = "<group>"; };
+		763FC3681E37A29100DC1D22 /* SingleQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleQuoteViewController.swift; sourceTree = "<group>"; };
 		766D22681E28A319002CA56D /* QuoteGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteGeneratorViewController.swift; sourceTree = "<group>"; };
 		766D226C1E28A8B5002CA56D /* SavedQuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedQuotesViewController.swift; sourceTree = "<group>"; };
 		766D22701E29682A002CA56D /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -95,15 +97,16 @@
 				76FC413B1E26AB1700194F06 /* QuoteClient.swift */,
 				76B91B981E26105D00891E6A /* ViewController.swift */,
 				766D22681E28A319002CA56D /* QuoteGeneratorViewController.swift */,
-				766D226C1E28A8B5002CA56D /* SavedQuotesViewController.swift */,
 				768DFFDF1E328BFB00C2C635 /* QuoteCell.swift */,
+				766D226C1E28A8B5002CA56D /* SavedQuotesViewController.swift */,
+				763FC3681E37A29100DC1D22 /* SingleQuoteViewController.swift */,
+				767B4BFD1E29E41E00DD2915 /* LoadingView.swift */,
+				767B4BFF1E29E43800DD2915 /* LoadingView.xib */,
 				76B91B9A1E26105D00891E6A /* Main.storyboard */,
 				76B91BA01E26105D00891E6A /* Assets.xcassets */,
 				76B91BA21E26105D00891E6A /* LaunchScreen.storyboard */,
 				76B91BA51E26105D00891E6A /* Info.plist */,
 				76B91B9D1E26105D00891E6A /* Quotes.xcdatamodeld */,
-				767B4BFD1E29E41E00DD2915 /* LoadingView.swift */,
-				767B4BFF1E29E43800DD2915 /* LoadingView.xib */,
 				767B4C011E29F4D500DD2915 /* ViewExtension.swift */,
 			);
 			path = Quotes;
@@ -250,6 +253,7 @@
 				76FC413C1E26AB1700194F06 /* QuoteClient.swift in Sources */,
 				766D226E1E28A8B5002CA56D /* SavedQuotesViewController.swift in Sources */,
 				766D22711E29682A002CA56D /* Quote.swift in Sources */,
+				763FC3691E37A29100DC1D22 /* SingleQuoteViewController.swift in Sources */,
 				76B91B9F1E26105D00891E6A /* Quotes.xcdatamodeld in Sources */,
 				76B91B971E26105D00891E6A /* AppDelegate.swift in Sources */,
 				766D226A1E28A319002CA56D /* QuoteGeneratorViewController.swift in Sources */,

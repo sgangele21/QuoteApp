@@ -21,15 +21,17 @@ class LoadingView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.isUserInteractionEnabled = false
     }
     
     func configLoadingScreen(show: Bool) {
         UIView.animate(withDuration: self.animationDuration, animations: {() in
+            let newAlpha : CGFloat = show ? 1.0 : 0.0
+            self.loadingIndicator.alpha = newAlpha
+            self.loadingLabel.alpha = newAlpha
             show ?  self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
-            let labelAlpha : CGFloat = show ? 1.0 : 0.0
-            self.loadingLabel.alpha = labelAlpha
-            self.isHidden = !show
         })
+        
     }
     
 }
